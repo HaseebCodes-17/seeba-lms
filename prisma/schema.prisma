@@ -1,0 +1,52 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+// User
+model User {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  clerkId   String   @unique
+  username  String
+  email     String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Course
+model Course {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  createdBy       String
+  purpose         String
+  topic           String
+  difficultyLevel String   @default("Easy")
+  courseOutline   Json
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+// Course Material
+model CourseMaterial {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  courseId   String   @unique
+  createdBy  String   @unique
+  notes      Json
+  flashCards Json
+  quizes     Json
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+// Contact
+model Contact {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  email     String
+  phone     String?
+  message   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
