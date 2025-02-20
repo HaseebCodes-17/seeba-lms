@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import React from "react";
 import ContactForm from "./_components/contact-form";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Contact - SeebaLMS",
+  description: "Contact with SeebaLMS",
+};
 
 const ContactPage = () => {
   return (

@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import React from "react";
 import CourseHeaderCard from "./_components/course-header-card";
 import CourseMaterial from "./_components/course-material";
 import Chapters from "./_components/chapters";
+
+export const metadata: Metadata = {
+  title: "Course",
+  description: "Course in SeebaLMS - Your ultimate path of learning.",
+};
 
 const SingleCourse = () => {
   return (

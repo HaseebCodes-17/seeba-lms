@@ -1,5 +1,4 @@
-"use client";
-
+import type { Metadata } from "next";
 import React from "react";
 import {
   Card,
@@ -8,6 +7,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+
+export const metadata: Metadata = {
+  title: "Services - SeebaLMS",
+  description: "Services provided by SeebaLMS",
+};
 
 const ServicesPage = () => {
   const services = [
